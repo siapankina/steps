@@ -11,15 +11,15 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(true);
 
   function handleNext() {
-    if (step < 3) setStep(step + 1);
+    if (step < 3) setStep((currentStep) => currentStep + 1);
   }
 
   function handlePrevious() {
-    if (step > 1) setStep(step - 1);
+    if (step > 1) setStep((currentStep) => currentStep - 1);
   }
   return (
     <React.Fragment>
-      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+      <button className="close" onClick={() => setIsOpen((is) => !is)}>
         &times;
       </button>
       {isOpen && (
